@@ -1,0 +1,233 @@
+.intro-gate {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background:
+    radial-gradient(circle at center, rgba(18, 98, 79, 0.22), transparent 35%),
+    #070909;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0) 8%,
+      rgba(255, 255, 255, 0.04) 9%,
+      rgba(255, 255, 255, 0) 17%
+    );
+    background-size: 100% 10px;
+    opacity: 0.08;
+  }
+}
+
+.intro-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(115, 224, 189, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(115, 224, 189, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.intro-panel {
+  position: relative;
+  width: min(100%, 1680px);
+  min-height: 100vh;
+  padding: 32px 24px;
+  color: #82f5c7;
+  font-family: var(--font-mono);
+  z-index: 1;
+  pointer-events: auto;
+  user-select: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 72% 22%,
+        rgba(115, 224, 189, 0.12),
+        transparent 22%
+      ),
+      radial-gradient(
+        circle at 18% 84%,
+        rgba(129, 255, 114, 0.08),
+        transparent 20%
+      );
+    pointer-events: none;
+  }
+}
+
+.intro-screen,
+.intro-footer,
+.intro-skip {
+  position: relative;
+  z-index: 2;
+}
+
+.intro-screen {
+  width: 100%;
+  padding-top: 24px;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.75;
+  text-shadow: 0 0 12px rgba(115, 224, 189, 0.28);
+  max-width: min(1120px, 100%);
+  cursor: var(--cursor-default);
+
+  * {
+    cursor: var(--cursor-default);
+  }
+}
+
+.intro-line {
+  margin: 0;
+  white-space: pre-wrap;
+
+  & + .intro-line {
+    margin-top: 8px;
+  }
+}
+
+.intro-line-command {
+  color: #d3ffe8;
+}
+
+.intro-prompt {
+  color: #81ff72;
+}
+
+.intro-command {
+  color: #8bffa5;
+}
+
+.intro-cursor {
+  display: inline-block;
+  width: 0.7ch;
+  height: 1.1em;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  background: #91ff78;
+  box-shadow: 0 0 10px rgba(145, 255, 120, 0.75);
+  animation: intro-blink 0.95s steps(1) infinite;
+}
+
+.intro-skip {
+  position: fixed;
+  top: 32px;
+  right: 36px;
+  border: 0;
+  background: transparent;
+  color: #81ff72;
+  font-family: var(--font-mono);
+  font-size: clamp(0.92rem, 1.2vw, 1rem);
+  cursor: var(--cursor-pointer);
+  z-index: 3;
+  pointer-events: auto;
+  transition:
+    color 180ms ease,
+    text-shadow 180ms ease,
+    transform 180ms ease;
+
+  &:hover {
+    color: #d9ffe0;
+    text-shadow: 0 0 12px rgba(129, 255, 114, 0.45);
+    transform: translateX(2px);
+    cursor: var(--cursor-pointer);
+  }
+
+  &:active {
+    cursor: var(--cursor-active);
+  }
+}
+
+.intro-footer {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  color: rgba(129, 255, 114, 0.78);
+  max-width: min(1120px, calc(100% - 48px));
+  cursor: var(--cursor-default);
+
+  * {
+    cursor: var(--cursor-default);
+  }
+}
+
+.intro-hint,
+.intro-mark {
+  margin: 0;
+}
+
+.intro-mark {
+  letter-spacing: 0.14em;
+  text-align: right;
+}
+
+.intro-glow {
+  position: absolute;
+  inset: auto auto 8% 18%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(115, 224, 189, 0.24) 0%,
+    rgba(115, 224, 189, 0) 72%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+@keyframes intro-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro-panel {
+    padding: 24px 18px;
+  }
+
+  .intro-screen {
+    padding-top: 56px;
+    font-size: 0.92rem;
+  }
+
+  .intro-skip {
+    top: 18px;
+    right: 18px;
+  }
+
+  .intro-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 18px;
+  }
+
+  .intro-mark {
+    text-align: left;
+  }
+}

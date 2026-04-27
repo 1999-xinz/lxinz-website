@@ -1,0 +1,65 @@
+:root {
+  --bg: #f2f0ea;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --surface-deep: rgba(242, 240, 234, 0.86);
+  --text: #191919;
+  --muted: #5e605f;
+  --border: rgba(25, 25, 25, 0.12);
+  --accent: #12624f;
+  --accent-strong: #0b4f40;
+  --accent-soft: rgba(18, 98, 79, 0.12);
+  --accent-glow: rgba(18, 98, 79, 0.24);
+  --shadow: 0 24px 80px rgba(28, 32, 30, 0.12);
+  --shadow-strong: 0 18px 40px rgba(13, 16, 15, 0.18);
+  --font-sans: 'Instrument Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-display:
+    'Space Grotesk', 'Avenir Next Condensed', 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', 'JetBrains Mono', 'Fira Code', monospace;
+  --cursor-default: url('/cursors/sw-arrow-default.svg') 5 4, auto;
+  --cursor-pointer: url('/cursors/sw-hand-pointer.svg') 5 4, pointer;
+  --cursor-active: url('/cursors/sw-hand-active.svg') 5 4, pointer;
+  --cursor-help: url('/cursors/sw-help.svg') 5 4, help;
+  --cursor-wait: url('/cursors/sw-wait.svg') 5 4, wait;
+  --cursor-crosshair: url('/cursors/sw-crosshair.svg') 16 16, crosshair;
+  --cursor-not-allowed: url('/cursors/sw-not-allowed.svg') 16 16, not-allowed;
+  --cursor-text: url('/cursors/sw-text.svg') 16 16, text;
+  --cursor-move: url('/cursors/sw-move.svg') 16 16, move;
+  --cursor-ew-resize: url('/cursors/sw-ew-resize.svg') 16 16, ew-resize;
+  --cursor-ns-resize: url('/cursors/sw-ns-resize.svg') 16 16, ns-resize;
+  --cursor-nwse-resize: url('/cursors/sw-nwse-resize.svg') 16 16, nwse-resize;
+  --cursor-nesw-resize: url('/cursors/sw-nesw-resize.svg') 16 16, nesw-resize;
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --page-width: min(1120px, 100%);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(18, 98, 79, 0.15), transparent 30%),
+    linear-gradient(180deg, #f7f4ec 0%, #eeebe3 100%);
+  font: 16px/1.5 var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0d1110;
+  --surface: rgba(13, 17, 16, 0.72);
+  --surface-strong: rgba(18, 23, 22, 0.9);
+  --surface-deep: rgba(11, 15, 14, 0.92);
+  --text: #edf3ef;
+  --muted: #97a19c;
+  --border: rgba(237, 243, 239, 0.12);
+  --accent: #73e0bd;
+  --accent-strong: #8df0cf;
+  --accent-soft: rgba(115, 224, 189, 0.14);
+  --accent-glow: rgba(115, 224, 189, 0.24);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.3);
+  background:
+    radial-gradient(circle at top, rgba(115, 224, 189, 0.16), transparent 32%),
+    linear-gradient(180deg, #101514 0%, #090b0b 100%);
+}
