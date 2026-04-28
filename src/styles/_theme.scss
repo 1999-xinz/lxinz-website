@@ -16,19 +16,22 @@
   --font-display:
     'Space Grotesk', 'Avenir Next Condensed', 'Segoe UI', sans-serif;
   --font-mono: 'SFMono-Regular', 'JetBrains Mono', 'Fira Code', monospace;
-  --cursor-default: url('/cursors/sw-arrow-default.svg') 5 4, auto;
-  --cursor-pointer: url('/cursors/sw-hand-pointer.svg') 5 4, pointer;
-  --cursor-active: url('/cursors/sw-hand-active.svg') 5 4, pointer;
-  --cursor-help: url('/cursors/sw-help.svg') 5 4, help;
-  --cursor-wait: url('/cursors/sw-wait.svg') 5 4, wait;
-  --cursor-crosshair: url('/cursors/sw-crosshair.svg') 16 16, crosshair;
-  --cursor-not-allowed: url('/cursors/sw-not-allowed.svg') 16 16, not-allowed;
-  --cursor-text: url('/cursors/sw-text.svg') 16 16, text;
-  --cursor-move: url('/cursors/sw-move.svg') 16 16, move;
-  --cursor-ew-resize: url('/cursors/sw-ew-resize.svg') 16 16, ew-resize;
-  --cursor-ns-resize: url('/cursors/sw-ns-resize.svg') 16 16, ns-resize;
-  --cursor-nwse-resize: url('/cursors/sw-nwse-resize.svg') 16 16, nwse-resize;
-  --cursor-nesw-resize: url('/cursors/sw-nesw-resize.svg') 16 16, nesw-resize;
+  // 鼠标指针样式（shiro）
+  --cursor-default: url('/cursors/shiro/normal.cur'), auto;
+  --cursor-pointer: url('/cursors/shiro/Alternative2.cur'), pointer;
+  --cursor-active: url('/cursors/shiro/Escritura%20a%20Mano.cur'), pointer;
+  --cursor-help: url('/cursors/shiro/ayuda.cur'), help;
+  --cursor-wait: url('/cursors/shiro/Alternative2.cur'), wait;
+  --cursor-crosshair: url('/cursors/shiro/precision.cur'), crosshair;
+  --cursor-not-allowed: url('/cursors/shiro/No%20Disponible.cur'), not-allowed;
+  --cursor-text: url('/cursors/shiro/texto.cur'), text;
+  --cursor-move: url('/cursors/shiro/Movee2.cur'), move;
+  --cursor-ew-resize: url('/cursors/shiro/horizontal.cur'), ew-resize;
+  --cursor-ns-resize: url('/cursors/shiro/vertical1.cur'), ns-resize;
+  --cursor-nwse-resize:
+    url('/cursors/shiro/diagonal%20resize%201.cur'), nwse-resize;
+  --cursor-nesw-resize:
+    url('/cursors/shiro/diagonal%20resize%202.cur'), nesw-resize;
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
