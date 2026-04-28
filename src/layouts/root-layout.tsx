@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom'
 import { FloatingOrbNav } from '../components/floating-orb-nav'
 import { IntroGate } from '../components/intro-gate'
-import { useTheme } from '../hooks/use-theme'
+import { ParticleNetworkBg } from '../components/particle-network-bg'
+import { ThemeToggle } from '../components/theme-toggle'
 
 export function RootLayout() {
-  const { isDark, toggleTheme } = useTheme()
-
   return (
     <IntroGate>
       <div className="site-shell">
-        <FloatingOrbNav isDark={isDark} onToggleTheme={toggleTheme} />
+        <ParticleNetworkBg />
+        <FloatingOrbNav />
 
         <header className="site-header">
           <div>
@@ -24,6 +24,8 @@ export function RootLayout() {
         <main className="page-shell">
           <Outlet />
         </main>
+
+        <ThemeToggle />
       </div>
     </IntroGate>
   )

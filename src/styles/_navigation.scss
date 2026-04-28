@@ -20,10 +20,32 @@
 }
 
 .orb-nav {
+  --orb-size: 76px;
   position: fixed;
   top: 28px;
   right: 28px;
   z-index: 40;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--orb-size);
+    height: var(--orb-size);
+    border-radius: 50%;
+    border: 2px solid rgba(179, 244, 227, 0.72);
+    box-shadow: 0 0 22px rgba(104, 219, 186, 0.34);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    pointer-events: none;
+    animation: orb-ripple 2.8s ease-out infinite;
+  }
+
+  &::after {
+    animation-delay: 1.4s;
+  }
 
   &[open] {
     .orb-panel {
@@ -40,8 +62,8 @@
 
 .orb-trigger {
   list-style: none;
-  width: 76px;
-  height: 76px;
+  width: var(--orb-size);
+  height: var(--orb-size);
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -79,6 +101,23 @@
       transparent 58%
     );
     pointer-events: none;
+  }
+}
+
+@keyframes orb-ripple {
+  0% {
+    opacity: 0.46;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  80% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.6);
   }
 }
 
@@ -160,14 +199,10 @@
 
 @media (max-width: 900px) {
   .orb-nav {
+    --orb-size: 68px;
     top: auto;
     right: 20px;
     bottom: 20px;
-  }
-
-  .orb-trigger {
-    width: 68px;
-    height: 68px;
   }
 
   .orb-panel {

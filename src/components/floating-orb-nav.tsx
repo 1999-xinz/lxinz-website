@@ -1,12 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { ThemeToggle } from './theme-toggle'
 
-type FloatingOrbNavProps = {
-  isDark: boolean
-  onToggleTheme: () => void
-}
-
-export function FloatingOrbNav({ isDark, onToggleTheme }: FloatingOrbNavProps) {
+export function FloatingOrbNav() {
   return (
     <details className="orb-nav">
       <summary className="orb-trigger" aria-label="展开导航">
@@ -14,14 +8,14 @@ export function FloatingOrbNav({ isDark, onToggleTheme }: FloatingOrbNavProps) {
       </summary>
 
       <div className="orb-panel">
-        <p className="orb-label">Navigate</p>
+        <p className="orb-label">神秘入口</p>
         <NavLink
           to="/"
           className={({ isActive }) =>
             isActive ? 'orb-link orb-link-active' : 'orb-link'
           }
         >
-          Home
+          首页
         </NavLink>
         <NavLink
           to="/about"
@@ -29,9 +23,8 @@ export function FloatingOrbNav({ isDark, onToggleTheme }: FloatingOrbNavProps) {
             isActive ? 'orb-link orb-link-active' : 'orb-link'
           }
         >
-          About
+          关于
         </NavLink>
-        <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
       </div>
     </details>
   )

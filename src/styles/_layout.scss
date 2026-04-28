@@ -2,6 +2,7 @@
   min-height: 100vh;
   padding: 32px;
   position: relative;
+  isolation: isolate;
   cursor: var(--cursor-default);
 
   &::before {
@@ -17,6 +18,7 @@
         transparent 18%
       );
     opacity: 0.7;
+    z-index: 0;
   }
 }
 
