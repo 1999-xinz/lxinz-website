@@ -1,0 +1,264 @@
+:root {
+  --cursor-default: url('/cursors/shiro/normal.cur'), auto;
+  --cursor-pointer: url('/cursors/shiro/normal.cur'), pointer;
+  --cursor-active: url('/cursors/shiro/Escritura%20a%20Mano.cur'), pointer;
+  --cursor-help: url('/cursors/shiro/ayuda.cur'), help;
+  --cursor-wait: url('/cursors/shiro/normal.cur'), wait;
+  --cursor-crosshair: url('/cursors/shiro/precision.cur'), crosshair;
+  --cursor-not-allowed: url('/cursors/shiro/No%20Disponible.cur'), not-allowed;
+  --cursor-text: url('/cursors/shiro/texto.cur'), text;
+  --cursor-move: url('/cursors/shiro/Movee2.cur'), move;
+  --cursor-ew-resize: url('/cursors/shiro/horizontal.cur'), ew-resize;
+  --cursor-ns-resize: url('/cursors/shiro/vertical1.cur'), ns-resize;
+  --cursor-nwse-resize:
+    url('/cursors/shiro/diagonal%20resize%201.cur'), nwse-resize;
+  --cursor-nesw-resize:
+    url('/cursors/shiro/diagonal%20resize%202.cur'), nesw-resize;
+}
+
+html {
+  cursor: var(--cursor-default);
+}
+
+*,
+*::before,
+*::after {
+  cursor: inherit;
+}
+
+body,
+body * {
+  cursor: var(--cursor-default);
+}
+
+main,
+nav,
+header,
+footer,
+section,
+article,
+aside,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+strong,
+em,
+code,
+pre,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+figure,
+figcaption,
+blockquote {
+  cursor: var(--cursor-default);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+strong,
+em,
+code,
+pre,
+li,
+dt,
+dd,
+figcaption,
+blockquote {
+  cursor: var(--cursor-text);
+}
+
+main::before,
+main::after,
+nav::before,
+nav::after,
+header::before,
+header::after,
+footer::before,
+footer::after,
+section::before,
+section::after,
+article::before,
+article::after,
+aside::before,
+aside::after,
+div::before,
+div::after {
+  cursor: inherit;
+}
+
+button,
+a,
+summary,
+summary *,
+label,
+label *,
+select,
+select *,
+input[type='checkbox'],
+input[type='radio'],
+input[type='range'],
+input[type='color'],
+input[type='file'],
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='image'],
+[role='button'],
+[role='button'] *,
+[role='link'],
+[role='link'] *,
+[data-cursor='pointer'],
+[data-cursor='pointer'] *,
+[tabindex]:not([tabindex='-1']) {
+  cursor: var(--cursor-pointer);
+}
+
+button:active,
+button:active *,
+a:active,
+a:active *,
+summary:active,
+summary:active *,
+label:active,
+label:active *,
+select:active,
+select:active *,
+input[type='checkbox']:active,
+input[type='radio']:active,
+input[type='range']:active,
+input[type='color']:active,
+input[type='file']:active,
+input[type='button']:active,
+input[type='submit']:active,
+input[type='reset']:active,
+input[type='image']:active,
+[role='button']:active,
+[role='button']:active *,
+[role='link']:active,
+[role='link']:active *,
+[data-cursor='pointer']:active,
+[data-cursor='pointer']:active *,
+[tabindex]:not([tabindex='-1']):active {
+  cursor: var(--cursor-active);
+}
+
+input,
+textarea,
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='url'],
+input[type='tel'],
+textarea,
+[contenteditable='true'] {
+  cursor: var(--cursor-text);
+}
+
+[data-cursor='help'] {
+  cursor: var(--cursor-help);
+}
+
+[data-cursor='help'] * {
+  cursor: var(--cursor-help);
+}
+
+[data-cursor='wait'],
+[aria-busy='true'] {
+  cursor: var(--cursor-wait);
+}
+
+[data-cursor='wait'] *,
+[aria-busy='true'] * {
+  cursor: var(--cursor-wait);
+}
+
+[data-cursor='crosshair'] {
+  cursor: var(--cursor-crosshair);
+}
+
+[data-cursor='crosshair'] * {
+  cursor: var(--cursor-crosshair);
+}
+
+[data-cursor='move'],
+[draggable='true'] {
+  cursor: var(--cursor-move);
+}
+
+[data-cursor='move'] *,
+[draggable='true'] * {
+  cursor: var(--cursor-move);
+}
+
+[data-cursor='ew-resize'],
+[data-cursor='col-resize'],
+[style*='cursor: ew-resize'],
+[style*='cursor: col-resize'] {
+  cursor: var(--cursor-ew-resize);
+}
+
+[data-cursor='ew-resize'] *,
+[data-cursor='col-resize'] * {
+  cursor: var(--cursor-ew-resize);
+}
+
+[data-cursor='ns-resize'],
+[data-cursor='row-resize'],
+[style*='cursor: ns-resize'],
+[style*='cursor: row-resize'] {
+  cursor: var(--cursor-ns-resize);
+}
+
+[data-cursor='ns-resize'] *,
+[data-cursor='row-resize'] * {
+  cursor: var(--cursor-ns-resize);
+}
+
+[data-cursor='nwse-resize'],
+[style*='cursor: nwse-resize'] {
+  cursor: var(--cursor-nwse-resize);
+}
+
+[data-cursor='nwse-resize'] * {
+  cursor: var(--cursor-nwse-resize);
+}
+
+[data-cursor='nesw-resize'],
+[style*='cursor: nesw-resize'] {
+  cursor: var(--cursor-nesw-resize);
+}
+
+[data-cursor='nesw-resize'] * {
+  cursor: var(--cursor-nesw-resize);
+}
+
+:disabled,
+[aria-disabled='true'],
+[data-cursor='not-allowed'] {
+  cursor: var(--cursor-not-allowed);
+}
+
+:disabled *,
+[aria-disabled='true'] *,
+[data-cursor='not-allowed'] * {
+  cursor: var(--cursor-not-allowed);
+}
