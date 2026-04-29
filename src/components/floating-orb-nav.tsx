@@ -18,6 +18,14 @@ export function FloatingOrbNav() {
           首页
         </NavLink>
         <NavLink
+          to="/blog"
+          className={({ isActive }) =>
+            isActive ? 'orb-link orb-link-active' : 'orb-link'
+          }
+        >
+          博客
+        </NavLink>
+        <NavLink
           to="/about"
           className={({ isActive }) =>
             isActive ? 'orb-link orb-link-active' : 'orb-link'

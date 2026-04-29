@@ -1,0 +1,13 @@
+<svg width="1280" height="760" viewBox="0 0 1280 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="760" fill="#F6F4ED"/>
+  <rect x="124" y="122" width="1032" height="516" rx="28" fill="#FFFFFF" stroke="#D8D2C9"/>
+  <rect x="186" y="188" width="330" height="56" rx="10" fill="#EAE6DD"/>
+  <rect x="186" y="274" width="742" height="18" rx="9" fill="#D9D3C8"/>
+  <rect x="186" y="312" width="706" height="18" rx="9" fill="#D9D3C8"/>
+  <rect x="186" y="350" width="618" height="18" rx="9" fill="#D9D3C8"/>
+  <rect x="186" y="416" width="908" height="166" rx="18" fill="#EEF3F1" stroke="#D7E2DD"/>
+  <rect x="848" y="208" width="246" height="140" rx="18" fill="#2B403A"/>
+  <text x="214" y="225" fill="#2A2C2A" font-family="Arial, sans-serif" font-size="34" font-weight="700">Article rhythm test</text>
+  <text x="882" y="286" fill="#F1FBF7" font-family="Arial, sans-serif" font-size="22">image block</text>
+  <text x="214" y="692" fill="#6F756F" font-family="Arial, sans-serif" font-size="28">用于测试正文图片的留白、边框、圆角和正文节奏。</text>
+</svg>

@@ -21,6 +21,8 @@
 
 .orb-nav {
   --orb-size: 76px;
+  --orb-ripple-color: rgba(10, 110, 74, 0.55);
+  --orb-ripple-glow: rgba(10, 110, 74, 0.28);
   position: fixed;
   top: 28px;
   right: 28px;
@@ -35,8 +37,8 @@
     width: var(--orb-size);
     height: var(--orb-size);
     border-radius: 50%;
-    border: 2px solid rgba(179, 244, 227, 0.72);
-    box-shadow: 0 0 22px rgba(104, 219, 186, 0.34);
+    border: 2px solid var(--orb-ripple-color);
+    box-shadow: 0 0 22px var(--orb-ripple-glow);
     transform: translate(-50%, -50%) scale(1);
     opacity: 0;
     pointer-events: none;

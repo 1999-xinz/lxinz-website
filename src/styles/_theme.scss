@@ -132,6 +132,8 @@
   --accent-glow: rgba(115, 224, 189, 0.24);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
   --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.3);
+  --orb-ripple-color: rgba(179, 244, 227, 0.72);
+  --orb-ripple-glow: rgba(104, 219, 186, 0.34);
   background:
     radial-gradient(circle at top, rgba(115, 224, 189, 0.16), transparent 32%),
     linear-gradient(180deg, #101514 0%, #090b0b 100%);
