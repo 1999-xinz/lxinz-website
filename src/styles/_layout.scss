@@ -22,6 +22,39 @@
   }
 }
 
+.site-shell-blog {
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 250, 244, 0.34),
+        rgba(245, 240, 234, 0.18)
+      ),
+      url('/imgs/bg.jpg') center / cover no-repeat;
+    opacity: 0.38;
+    z-index: -1;
+  }
+}
+
+.page-shell-blog {
+  position: relative;
+}
+
+:root[data-theme='dark'] {
+  .site-shell-blog {
+    &::after {
+      background:
+        linear-gradient(180deg, rgba(8, 12, 11, 0.7), rgba(10, 15, 14, 0.58)),
+        url('/imgs/bg.jpg') center / cover no-repeat;
+      opacity: 0.34;
+    }
+  }
+}
+
 .site-header {
   width: var(--page-width);
   margin: 0 auto 24px;

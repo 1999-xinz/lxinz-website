@@ -7,7 +7,6 @@ tags:
   - 动效
   - 终端界面
   - 叙事感
-cover: ./terminal-grid.svg
 ---
 
 ![终端化开场示意](./terminal-grid.svg)

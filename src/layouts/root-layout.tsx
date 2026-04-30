@@ -6,12 +6,17 @@ import { ThemeToggle } from '../components/theme-toggle'
 
 export function RootLayout() {
   const location = useLocation()
-  const shouldHideHeader =
-    location.pathname === '/blog' || location.pathname.startsWith('/posts/')
+  const isBlogModule =
+    location.pathname === '/' ||
+    location.pathname === '/blog' ||
+    location.pathname.startsWith('/posts/')
+  const shouldHideHeader = isBlogModule
 
   return (
     <IntroGate>
-      <div className="site-shell">
+      <div
+        className={isBlogModule ? 'site-shell site-shell-blog' : 'site-shell'}
+      >
         <ParticleNetworkBg />
         <FloatingOrbNav />
 
@@ -27,7 +32,9 @@ export function RootLayout() {
           </header>
         )}
 
-        <main className="page-shell">
+        <main
+          className={isBlogModule ? 'page-shell page-shell-blog' : 'page-shell'}
+        >
           <Outlet />
         </main>
 
