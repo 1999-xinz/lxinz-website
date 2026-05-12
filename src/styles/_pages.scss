@@ -1678,6 +1678,22 @@
     color: color-mix(in srgb, var(--text) 94%, black);
   }
 
+  /* 紧凑型标题间距：减小不同级别标题与后续内容的距离 */
+  h1 {
+    margin: 1rem 0 0.6rem;
+    line-height: 1.12;
+  }
+
+  h2 {
+    margin: 0.9rem 0 0.5rem;
+    line-height: 1.14;
+  }
+
+  h3 {
+    margin: 0.7rem 0 0.4rem;
+    line-height: 1.16;
+  }
+
   p,
   li {
     font-size: 1.03rem;

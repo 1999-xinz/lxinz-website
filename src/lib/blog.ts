@@ -58,14 +58,11 @@ type PostFrontmatter = {
   cover?: unknown
 }
 
-const markdownModules = import.meta.glob<string>(
-  '../content/posts/*/index.md',
-  {
-    eager: true,
-    import: 'default',
-    query: '?raw',
-  },
-) as Record<string, string>
+const markdownModules = import.meta.glob<string>('../content/posts/*/*.md', {
+  eager: true,
+  import: 'default',
+  query: '?raw',
+}) as Record<string, string>
 
 const assetModules = import.meta.glob<string>(
   '../content/posts/**/*.{png,jpg,jpeg,gif,svg,webp,avif}',
@@ -195,7 +192,7 @@ function isExternalPath(path: string) {
 }
 
 function getSlugFromModulePath(modulePath: string) {
-  const match = modulePath.match(/posts\/([^/]+)\/index\.md$/)
+  const match = modulePath.match(/posts\/([^/]+)\//)
   return match?.[1] ?? ''
 }
 
@@ -203,13 +200,33 @@ function resolveAssetUrl(slug: string, assetPath: string) {
   if (!assetPath || isExternalPath(assetPath)) {
     return assetPath
   }
+  // Remove any leading ./ from the assetPath to avoid paths like "../..././file.png"
+  const cleanAssetPath = assetPath.replace(/^\.\/+,?/, '').replace(/^\.\//, '')
 
-  const normalized = normalizePath(`../content/posts/${slug}/${assetPath}`)
-  if (assetModules[normalized]) {
-    return '/test.png'
+  if (!cleanAssetPath) {
+    return assetPath
   }
 
-  return '/test.png'
+  const rawKey = `../content/posts/${slug}/${cleanAssetPath}`
+  const normalized = normalizePath(rawKey)
+
+  // Try the most-likely keys that import.meta.glob produced.
+  if (assetModules[rawKey]) {
+    return assetModules[rawKey]
+  }
+
+  if (assetModules[normalized]) {
+    return assetModules[normalized]
+  }
+
+  // Try with a leading ./ in case the glob keys differ on some environments.
+  const dotKey = `./${rawKey}`
+  if (assetModules[dotKey]) {
+    return assetModules[dotKey]
+  }
+
+  // Fallback: return a clean site-relative path without the './' segment.
+  return `/content/posts/${slug}/${cleanAssetPath}`
 }
 
 function rewriteMarkdownAssetPaths(markdown: string, slug: string) {
@@ -305,13 +322,16 @@ function createPost(modulePath: string, rawMarkdown: string): PostDetail {
   const formattedDate = dateFormatter.format(safeDate)
   const yearMonthLabel = monthFormatter.format(safeDate)
 
+  const computedTitle =
+    typeof frontmatter.title === 'string' ? frontmatter.title : slug
+
   return {
     slug,
-    title: typeof frontmatter.title === 'string' ? frontmatter.title : slug,
+    title: computedTitle,
     summary:
       typeof frontmatter.summary === 'string' && frontmatter.summary.trim()
         ? frontmatter.summary
-        : getExcerpt(enhanced.textContent),
+        : computedTitle,
     author:
       typeof frontmatter.author === 'string' && frontmatter.author.trim()
         ? frontmatter.author
