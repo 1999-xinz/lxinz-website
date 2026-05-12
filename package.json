@@ -28,7 +28,7 @@
     "marked": "^18.0.2",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-router-dom": "^7.14.2"
+    "react-router-dom": "^7.15.0"
   },
   "devDependencies": {
     "@babel/types": "^7.28.5",
