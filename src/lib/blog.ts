@@ -302,10 +302,6 @@ function getReadingMinutes(text: string) {
   return Math.max(1, Math.ceil(length / 420))
 }
 
-function getExcerpt(text: string) {
-  return text.replace(/\s+/g, ' ').trim().slice(0, 110)
-}
-
 function createPost(modulePath: string, rawMarkdown: string): PostDetail {
   const slug = getSlugFromModulePath(modulePath)
   const { data, content } = parseFrontmatter(rawMarkdown)
